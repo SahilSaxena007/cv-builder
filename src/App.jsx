@@ -4,7 +4,10 @@ function App() {
   return (
     <>
       <div id="main-container">
-        <Resume />
+        <div id="editing-container"></div>
+        <div id="resume-container">
+          <Resume />
+        </div>
       </div>
     </>
   );

@@ -4,7 +4,94 @@
 }
 
 #main-container {
-  height: 100vh;
+  height: 1000px;
   width: 100vw;
-  background-color: aqua;
+  background-color: lightgrey;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+}
+
+#resume-container {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  /* background: lightcyan;          */
+}
+
+#resume {
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+  background: white;
+  width: 75%;
+  height: 800px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+#resume-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2b3d4d;
+}
+
+#name {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  color: white;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+#personal-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 0;
+}
+
+#resume-information {
+  background-color: white;
+}
+
+@media (max-width: 1200px) {
+  #main-container {
+    grid-template-columns: 1fr 600px; /* Left container shrinks, right remains fixed */
+  }
+
+  #resume {
+    width: 500px;
+  }
+}
+
+@media (max-width: 800px) {
+  #main-container {
+    grid-template-columns: 1fr 600px; /* Further reduction of the left container */
+  }
+}
+
+@media (max-width: 500px) {
+  #main-container {
+    grid-template-columns: 1fr; /* Stacks the containers on top of each other */
+    grid-template-rows: 400px 1fr; /* Divide the screen equally */
+    overflow-y: auto; /* Makes the content scrollable */
+  }
 }

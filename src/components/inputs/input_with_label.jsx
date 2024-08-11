@@ -1,14 +1,15 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
 
-const InputWithLabel = ({ identity, labelText, type = "text" }) => {
-  const [valueText, changeValueText] = useState("");
-
+const InputWithLabel = ({
+  identity,
+  labelText,
+  type = "text",
+  value,
+  handleChange,
+}) => {
   const handleValueChange = (event) => {
-    changeValueText(event.target.value);
+    handleChange(event.target.value);
   };
-
-  console.log(`${identity}: `, valueText);
 
   return (
     <div className="input">
@@ -16,7 +17,7 @@ const InputWithLabel = ({ identity, labelText, type = "text" }) => {
       <input
         type={type}
         id={identity}
-        value={valueText}
+        value={value}
         onChange={handleValueChange}
       />
     </div>
@@ -27,6 +28,8 @@ InputWithLabel.propTypes = {
   identity: PropTypes.string.isRequired,
   labelText: PropTypes.string.isRequired,
   type: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default InputWithLabel;

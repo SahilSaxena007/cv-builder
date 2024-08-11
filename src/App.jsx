@@ -18,14 +18,14 @@ function App() {
     <>
       <div id="main-container">
         <div id="editing-container">
-          <EditComponent />
-        </div>
-        <div id="resume-container">
-          {/* Passing the state to the Resume component as props */}
-          <Resume
+          <EditComponent
             cvInformation={cvInformation}
             handleCvChange={changeCvInformation}
           />
+        </div>
+        <div id="resume-container">
+          {/* Passing the state to the Resume component as props */}
+          <Resume cvInformation={cvInformation} />
         </div>
       </div>
     </>

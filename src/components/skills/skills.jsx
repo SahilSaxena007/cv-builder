@@ -5,17 +5,17 @@ import { IoBriefcaseSharp } from "react-icons/io5";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { RiArrowDropUpLine } from "react-icons/ri";
 
-const Experience = () => {
+const Skills = () => {
   const [modalOpen, changeModalOpen] = useState(false);
   const handleModalChange = () => {
     changeModalOpen(!modalOpen);
   };
   return (
     <>
-      <div id="experience-container" className="page-container">
-        <div id="experience-title" className="page-title">
+      <div id="skills-container" className="page-container">
+        <div id="skills-title" className="page-title">
           <IoBriefcaseSharp size={24} /> {/* Adjust the size as needed */}
-          <p>Experience</p>
+          <p>Skills</p>
           {modalOpen && (
             <RiArrowDropUpLine size={34} onClick={handleModalChange} />
           )}
@@ -25,9 +25,9 @@ const Experience = () => {
           {/* Adjust the size as needed */}
         </div>
         {modalOpen && (
-          <div id="experience-modal" className="modal">
+          <div id="skills-modal" className="modal">
             <Break />
-            <Add_experience_icon_component text="Experience" />
+            <Add_experience_icon_component text="skills" />
           </div>
         )}
       </div>
@@ -35,4 +35,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Skills;

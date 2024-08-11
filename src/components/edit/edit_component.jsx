@@ -2,6 +2,8 @@
 // import React from "react";
 import PersonalDetails from "../details/personal_details";
 import Experience from "../experience/experience";
+import Education from "../education/eduction";
+import Skills from "../skills/skills";
 
 const EditComponent = ({ cvInformation, handleCvChange }) => {
   return (
@@ -11,6 +13,8 @@ const EditComponent = ({ cvInformation, handleCvChange }) => {
           cvInformation={cvInformation}
           handleCvChange={handleCvChange}
         />
+        <Skills />
+        <Education />
         <Experience />
       </div>
     </>

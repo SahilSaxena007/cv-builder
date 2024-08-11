@@ -134,7 +134,7 @@ p {
 }
 
 /* Exprience Section */
-#experience-container {
+.page-container {
   display: flex;
   flex-direction: column;
   width: clamp(300px, 50vw, 400px);
@@ -144,17 +144,17 @@ p {
   background: #ffffff;
 }
 
-#experience-title {
+.page-title {
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
   align-items: center; /* Center items vertically */
 }
 
-#experience-title > svg {
+.page-title > svg {
   justify-self: center; /* Center the icons horizontally */
 }
 
-#experience-title > p {
+.page-title > p {
   display: flex;
   justify-content: start;
   font-size: 1.25rem;
@@ -169,7 +169,7 @@ p {
   background-color: black;
 }
 
-#experience-modal {
+.modal {
   display: flex;
   flex-direction: column;
   justify-content: center;

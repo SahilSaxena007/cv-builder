@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { IoIosAddCircle } from "react-icons/io";
 
 const AddIconComponent = ({ text }) => {

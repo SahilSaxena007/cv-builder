@@ -2,25 +2,35 @@ import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 
-const Resume = () => {
+// eslint-disable-next-line react/prop-types
+const Resume = ({ cvInformation }) => {
+  const information = cvInformation;
   return (
     <>
       <div id="resume">
         <div id="resume-header">
-          <div id="name">SAHIL SAXENA</div>
+          {information.header.name && (
+            <div id="name">{information.header.name}</div>
+          )}
           <div id="personal-details">
-            <div className="detail-item">
-              <MdEmail color="white" />
-              <p>sahil77.saxena@gmail.com</p>
-            </div>
-            <div className="detail-item">
-              <FaPhoneAlt color="white" />
-              <p>+971553378350</p>
-            </div>
-            <div className="detail-item">
-              <IoLocationSharp color="white" />
-              <p>London</p>
-            </div>
+            {information.header.details.email && (
+              <div className="detail-item">
+                <MdEmail color="white" />
+                <p>{information.header.details.email}</p>
+              </div>
+            )}
+            {information.header.details.phone && (
+              <div className="detail-item">
+                <FaPhoneAlt color="white" />
+                <p>{information.header.details.phone}</p>
+              </div>
+            )}
+            {information.header.details.location && (
+              <div className="detail-item">
+                <IoLocationSharp color="white" />
+                <p>{information.header.details.location}</p>
+              </div>
+            )}
           </div>
         </div>
         <div id="resume-information"></div>

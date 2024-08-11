@@ -18,6 +18,12 @@
   /* background: lightcyan;          */
 }
 
+#editing-container {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
 #resume {
   display: grid;
   grid-template-rows: 1fr 6fr;

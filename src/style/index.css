@@ -1,7 +1,11 @@
 * {
   margin: 0;
+  /* height: 100%; */
+  /* box-sizing: border-box; Added this line for better control over width and padding */
+}
+
+body {
   height: 100%;
-  box-sizing: border-box; /* Added this line for better control over width and padding */
 }
 
 #main-container {
@@ -22,12 +26,13 @@
 #editing-container {
   display: flex;
   justify-content: end;
-  align-items: center;
+  align-items: start;
+  /* background-color: #2b3d4d; */
 }
 
 #editing {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: start;
   width: 90%;
   margin-top: 35px;

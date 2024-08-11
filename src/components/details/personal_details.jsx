@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import InputWithLabel from "../inputs/input_with_label";
 
 const PersonalDetails = ({ cvInformation, handleCvChange }) => {

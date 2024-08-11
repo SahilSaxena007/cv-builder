@@ -12,6 +12,16 @@ function App() {
         location: "Manchester",
       },
     },
+    experience: [
+      {
+        company_name: "Umbrella Inc",
+        position: "Designer",
+        start_date: "25 August",
+        end_date: "30 Sept",
+        location: "New York",
+        description: "Hello, Whatsupp",
+      },
+    ],
   });
 
   return (

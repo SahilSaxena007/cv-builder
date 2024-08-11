@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Break from "../line-break/break";
 import Add_experience_icon_component from "../icons/add_icon_with_text";
-import { IoBriefcaseSharp } from "react-icons/io5";
+import { FaGraduationCap } from "react-icons/fa6";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { RiArrowDropUpLine } from "react-icons/ri";
 
@@ -14,7 +14,7 @@ const Education = () => {
     <>
       <div id="education-container" className="page-container">
         <div id="education-title" className="page-title">
-          <IoBriefcaseSharp size={24} /> {/* Adjust the size as needed */}
+          <FaGraduationCap size={24} /> {/* Adjust the size as needed */}
           <p>Education</p>
           {modalOpen && (
             <RiArrowDropUpLine size={34} onClick={handleModalChange} />

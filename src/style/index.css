@@ -194,6 +194,28 @@ p {
   color: white;
 }
 
+.experience-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.company-item {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.company-item > p {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-weight: 600;
+  color: black;
+  margin-left: 10px;
+}
+
 /* Resume CSS */
 
 #resume-information {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Break from "../line-break/break";
 import Add_experience_icon_component from "../icons/add_icon_with_text";
-import { IoBriefcaseSharp } from "react-icons/io5";
+import { PiCompassToolBold } from "react-icons/pi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { RiArrowDropUpLine } from "react-icons/ri";
 
@@ -14,7 +14,7 @@ const Skills = () => {
     <>
       <div id="skills-container" className="page-container">
         <div id="skills-title" className="page-title">
-          <IoBriefcaseSharp size={24} /> {/* Adjust the size as needed */}
+          <PiCompassToolBold size={24} /> {/* Adjust the size as needed */}
           <p>Skills</p>
           {modalOpen && (
             <RiArrowDropUpLine size={34} onClick={handleModalChange} />

@@ -17,10 +17,15 @@ function App() {
   return (
     <>
       <div id="main-container">
-        <div id="editing-container"></div>
+        <div id="editing-container">
+          <EditComponent />
+        </div>
         <div id="resume-container">
           {/* Passing the state to the Resume component as props */}
-          <Resume cvInformation={cvInformation} />
+          <Resume
+            cvInformation={cvInformation}
+            handleCvChange={changeCvInformation}
+          />
         </div>
       </div>
     </>

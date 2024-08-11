@@ -1,6 +1,7 @@
 * {
   margin: 0;
   height: 100%;
+  box-sizing: border-box; /* Added this line for better control over width and padding */
 }
 
 #main-container {
@@ -20,8 +21,58 @@
 
 #editing-container {
   display: flex;
-  justify-content: start;
+  justify-content: end;
+  align-items: center;
+}
+
+#editing {
+  display: flex;
+  justify-content: center;
   align-items: start;
+  width: 90%;
+  margin-top: 35px;
+}
+
+#personal-info {
+  display: flex;
+  flex-direction: column;
+  width: clamp(300px, 50vw, 400px);
+  height: auto; /* Adjust height to fit content */
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  background: #ffffff;
+}
+
+#personal-info > p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: black;
+  margin: 10px; /* Ensure there's spacing around the paragraph */
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  gap: 10px;
+  width: 90%; /* Ensure that the container takes the full available width */
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+input {
+  color: black; /* Ensure text color is black */
+  height: 30px;
+  width: 100%;
+  border: none;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 5px;
+
+  font-size: 0.85rem;
 }
 
 #resume {

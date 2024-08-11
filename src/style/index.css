@@ -32,10 +32,13 @@ body {
 
 #editing {
   display: flex;
+  flex-direction: column;
+  /* border: solid; */
   justify-content: start;
   align-items: start;
   width: 90%;
   margin-top: 35px;
+  gap: 20px;
 }
 
 #personal-info {
@@ -129,6 +132,69 @@ p {
   color: white;
   margin: 0;
 }
+
+/* Exprience Section */
+#experience-container {
+  display: flex;
+  flex-direction: column;
+  width: clamp(300px, 50vw, 400px);
+  height: auto; /* Adjust height to fit content */
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  background: #ffffff;
+}
+
+#experience-title {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  align-items: center; /* Center items vertically */
+}
+
+#experience-title > svg {
+  justify-self: center; /* Center the icons horizontally */
+}
+
+#experience-title > p {
+  display: flex;
+  justify-content: start;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: black;
+  margin: 10px; /* Ensure there's spacing around the paragraph */
+}
+
+.break {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+#experience-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin: 10px;
+  gap: 10px;
+}
+
+.add-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 200px;
+  background-color: #2b3d4d;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+.add-container > p {
+  color: white;
+}
+
+/* Resume CSS */
 
 #resume-information {
   background-color: white;

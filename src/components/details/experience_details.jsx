@@ -13,6 +13,7 @@ const ExperienceDetails = ({ experience, onSave, onDelete, onCancel }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSave(formData);
+    onCancel();
   };
 
   return (

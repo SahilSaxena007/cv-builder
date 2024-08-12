@@ -11,13 +11,17 @@ import ExperienceDetails from "../details/experience_details";
 
 const Experience = ({ cvInformation }) => {
   const [modalOpen, changeModalOpen] = useState(false);
-  // eslint-disable-next-line no-unused-vars
+  const [selectedItem, changeSelectedItem] = useState("company-list");
   const [eyeState, setEyeState] = useState(
     cvInformation.experience.map(() => true)
   );
+  const [selectedExperience, setSelectedExperience] = useState(null);
 
   const handleModalChange = () => {
     changeModalOpen(!modalOpen);
+    if (!modalOpen) {
+      changeSelectedItem("company-list"); // Reset to company list when reopening the modal
+    }
   };
 
   const toggleEye = (index) => {
@@ -26,6 +30,11 @@ const Experience = ({ cvInformation }) => {
       newEyeState[index] = !newEyeState[index];
       return newEyeState;
     });
+  };
+
+  const handleExperienceClick = (experience) => {
+    setSelectedExperience(experience);
+    changeSelectedItem("experience-details");
   };
 
   return (
@@ -41,33 +50,45 @@ const Experience = ({ cvInformation }) => {
           )}
         </div>
 
-        {/* {modalOpen && (
+        {modalOpen && (
           <div id="experience-modal" className="modal">
             <Break />
-            {cvInformation.experience.length > 0 ? (
-              cvInformation.experience.map((experience, index) => (
-                <div key={index} className="experience-item">
-                  <div className="company-item">
-                    <p>{experience.company_name}</p>
-                    {eyeState[index] ? (
-                      <IoIosEye size={24} onClick={() => toggleEye(index)} />
-                    ) : (
-                      <IoIosEyeOff size={24} onClick={() => toggleEye(index)} />
-                    )}
-                  </div>
-                  <hr />
-                </div>
-              ))
+            {selectedItem === "company-list" ? (
+              <>
+                {cvInformation.experience.length > 0 ? (
+                  cvInformation.experience.map((experience, index) => (
+                    <div
+                      key={index}
+                      className="experience-item"
+                      onClick={() => handleExperienceClick(experience)}
+                    >
+                      <div className="company-item">
+                        <p>{experience.company_name}</p>
+                        {eyeState[index] ? (
+                          <IoIosEye
+                            size={24}
+                            onClick={() => toggleEye(index)}
+                          />
+                        ) : (
+                          <IoIosEyeOff
+                            size={24}
+                            onClick={() => toggleEye(index)}
+                          />
+                        )}
+                      </div>
+                      <hr />
+                    </div>
+                  ))
+                ) : (
+                  <p>No experience listed</p>
+                )}
+                <Add_experience_icon_component text="Experience" />
+              </>
             ) : (
-              <p>No experience listed</p>
+              selectedExperience && (
+                <ExperienceDetails experience={selectedExperience} />
+              )
             )}
-            <Add_experience_icon_component text="Experience" />
-          </div>
-        )} */}
-        {modalOpen && (
-          <div className="modal">
-            <Break />
-            <ExperienceDetails />
           </div>
         )}
       </div>

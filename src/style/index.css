@@ -134,6 +134,93 @@ p {
   margin: 0;
 }
 
+/* Resume Information */
+#resume-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#resume-education,
+#resume-experience {
+  width: 95%;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  background-color: #eef1f2;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2b3d4d;
+}
+
+#experience-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 15px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 2fr 6fr;
+  gap: 5px;
+}
+
+.experienceTitle {
+  font-weight: 600;
+}
+
+.experience-position {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.experience-description {
+  /* border: solid; */
+  width: 60%;
+  grid-column: 2/3;
+}
+
+.content > div {
+  font-size: 0.85rem;
+}
+
+/* resume education content */
+#education-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 15px;
+}
+
+.edu-content {
+  display: grid;
+  grid-template-columns: 2fr 6fr;
+  gap: 5px;
+}
+
+.edu-content > div {
+  font-size: 0.85rem;
+}
+
+.educationTitle {
+  font-weight: 600;
+}
+
+.education-degree {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #555;
+}
+
 /* Exprience Section */
 .page-container {
   display: flex;

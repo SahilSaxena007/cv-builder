@@ -12,14 +12,32 @@ function App() {
         location: "Manchester",
       },
     },
+    education: [
+      {
+        institution: "University of Manchester",
+        degree: "BSc Computer Science",
+        start_date: "05/2024",
+        end_date: "09/2025",
+        location: "New York",
+      },
+    ],
     experience: [
       {
         company_name: "Umbrella Inc",
         position: "Designer",
-        start_date: "25 August",
-        end_date: "30 Sept",
+        start_date: "05/2024",
+        end_date: "09/2025",
         location: "New York",
-        description: "Hello, Whatsupp",
+        description:
+          "The First AI company in the world. They have revolutionaized the industry.",
+      },
+      {
+        company_name: "Microsoft",
+        position: "Software Engineer",
+        start_date: "05/2022",
+        end_date: "",
+        location: "Dubai",
+        description: "One of the greatest companies to exist",
       },
     ],
   });

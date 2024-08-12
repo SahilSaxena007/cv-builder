@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-// import React from "react";
+// EditComponent.jsx
 import PersonalDetails from "../details/personal_details";
 import Experience from "../experience/experience";
 import Education from "../education/eduction";

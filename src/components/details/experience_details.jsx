@@ -1,10 +1,20 @@
+/* eslint-disable react/prop-types */
+// ExperienceDetails.jsx
+import { useState } from "react";
 import InputWithLabel from "../inputs/input_with_label";
 
-const ExperienceDetails = () => {
+const ExperienceDetails = ({ experience, onSave, onDelete, onCancel }) => {
+  const [formData, setFormData] = useState(experience);
+
+  const handleChange = (field, value) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission logic here
+    onSave(formData);
   };
+
   return (
     <>
       <div id="experience-info">
@@ -13,44 +23,55 @@ const ExperienceDetails = () => {
             identity="company-name"
             labelText="Company Name"
             type="text"
-            value=""
+            value={formData.company_name}
+            handleChange={(value) => handleChange("company_name", value)}
           />
           <InputWithLabel
             identity="position-name"
-            labelText="Positon"
+            labelText="Position"
             type="text"
-            value=""
+            value={formData.position}
+            handleChange={(value) => handleChange("position", value)}
           />
-
           <div className="experience-date">
             <InputWithLabel
               identity="start-date"
               labelText="Start Date"
-              type="date"
-              value=""
+              type="textt"
+              value={formData.start_date}
+              handleChange={(value) => handleChange("start_date", value)}
             />
             <InputWithLabel
               identity="end-date"
               labelText="End Date"
-              type="date"
-              value=""
+              type="text"
+              value={formData.end_date}
+              handleChange={(value) => handleChange("end_date", value)}
             />
           </div>
           <InputWithLabel
             identity="location-name"
             labelText="Location"
             type="text"
-            value=""
+            value={formData.location}
+            handleChange={(value) => handleChange("location", value)}
           />
-
           <div className="input">
-            <label htmlFor="description"> Description</label>
-            <textarea id="description"></textarea>
+            <label htmlFor="description">Description</label>
+            <textarea
+              id="description"
+              value={formData.description}
+              onChange={(e) => handleChange("description", e.target.value)}
+            ></textarea>
           </div>
           <div id="experience-buttons">
-            <button type="">Delete</button>
-            <button type="">cancel</button>
-            <button type="submit">Submit</button>
+            <button type="button" onClick={onDelete}>
+              Delete
+            </button>
+            <button type="button" onClick={onCancel}>
+              Cancel
+            </button>
+            <button type="submit">Save</button>
           </div>
         </form>
       </div>

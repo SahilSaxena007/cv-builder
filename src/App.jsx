@@ -52,7 +52,6 @@ function App() {
           />
         </div>
         <div id="resume-container">
-          {/* Passing the state to the Resume component as props */}
           <Resume cvInformation={cvInformation} />
         </div>
       </div>

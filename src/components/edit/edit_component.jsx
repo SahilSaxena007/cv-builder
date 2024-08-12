@@ -15,7 +15,10 @@ const EditComponent = ({ cvInformation, handleCvChange }) => {
         />
         <Skills />
         <Education />
-        <Experience cvInformation={cvInformation} />
+        <Experience
+          cvInformation={cvInformation}
+          handleCvChange={handleCvChange}
+        />
       </div>
     </>
   );

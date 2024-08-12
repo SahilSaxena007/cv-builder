@@ -1,7 +1,7 @@
 * {
   margin: 0;
   /* height: 100%; */
-  /* box-sizing: border-box; Added this line for better control over width and padding */
+  box-sizing: border-box;
 }
 
 body {
@@ -14,6 +14,7 @@ body {
   background-color: lightgrey;
   display: grid;
   grid-template-columns: 1fr 1.25fr;
+  overflow-y: auto;
 }
 
 #resume-container {
@@ -214,6 +215,44 @@ p {
   font-weight: 600;
   color: black;
   margin-left: 10px;
+}
+
+/* Experience Details */
+#experience-info {
+  display: flex;
+  flex-direction: column;
+  width: clamp(300px, 50vw, 400px);
+  height: auto; /* Adjust height to fit content */
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.experience-date {
+  display: flex;
+  padding-right: 10px;
+}
+
+textarea {
+  color: black; /* Ensure text color is black */
+  height: 30px;
+  width: 100%;
+  border: none;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 10px;
+
+  font-size: 0.85rem;
+}
+
+#experience-buttons {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  gap: 5px;
+  padding: 10px;
+}
+
+#experience-buttons > button {
+  width: 5vw;
 }
 
 /* Resume CSS */

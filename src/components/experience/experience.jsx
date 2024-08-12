@@ -7,9 +7,11 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { RiArrowDropUpLine } from "react-icons/ri";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
+import ExperienceDetails from "../details/experience_details";
 
 const Experience = ({ cvInformation }) => {
   const [modalOpen, changeModalOpen] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [eyeState, setEyeState] = useState(
     cvInformation.experience.map(() => true)
   );
@@ -38,7 +40,8 @@ const Experience = ({ cvInformation }) => {
             <RiArrowDropDownLine size={34} onClick={handleModalChange} />
           )}
         </div>
-        {modalOpen && (
+
+        {/* {modalOpen && (
           <div id="experience-modal" className="modal">
             <Break />
             {cvInformation.experience.length > 0 ? (
@@ -59,6 +62,12 @@ const Experience = ({ cvInformation }) => {
               <p>No experience listed</p>
             )}
             <Add_experience_icon_component text="Experience" />
+          </div>
+        )} */}
+        {modalOpen && (
+          <div className="modal">
+            <Break />
+            <ExperienceDetails />
           </div>
         )}
       </div>

@@ -21,11 +21,11 @@ const EducationDetails = ({ education, onSave, onDelete, onCancel }) => {
       <div id="education-info">
         <form onSubmit={handleSubmit}>
           <InputWithLabel
-            identity="intitution-name"
+            identity="institution-name"
             labelText="Institution"
             type="text"
             value={formData.institution}
-            handleChange={(value) => handleChange("intitution", value)}
+            handleChange={(value) => handleChange("institution", value)}
           />
           <InputWithLabel
             identity="degree-name"

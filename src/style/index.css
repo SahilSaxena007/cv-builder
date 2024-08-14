@@ -24,6 +24,22 @@ body {
   /* background: lightcyan;          */
 }
 
+#top-level {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 2fr 1fr;
+  margin-top: 35px;
+  padding-left: 5%;
+  gap: 20px;
+}
+
+#additional-features {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
 #editing-container {
   display: flex;
   justify-content: end;
@@ -31,14 +47,35 @@ body {
   /* background-color: #2b3d4d; */
 }
 
+#download {
+  width: 80%;
+  height: 35px;
+  background-color: #2b3d4d;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+}
+
+#download:hover {
+  box-shadow: 2px 2px 5px 5px #c53d1b80;
+}
+
+#download > p {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 600;
+}
+
 #editing {
   display: flex;
   flex-direction: column;
-  /* border: solid; */
   justify-content: start;
   align-items: start;
-  width: 90%;
-  margin-top: 35px;
   gap: 20px;
 }
 

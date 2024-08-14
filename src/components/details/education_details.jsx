@@ -3,8 +3,8 @@
 import { useState } from "react";
 import InputWithLabel from "../inputs/input_with_label";
 
-const ExperienceDetails = ({ experience, onSave, onDelete, onCancel }) => {
-  const [formData, setFormData] = useState(experience);
+const EducationDetails = ({ education, onSave, onDelete, onCancel }) => {
+  const [formData, setFormData] = useState(education);
 
   const handleChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -18,27 +18,27 @@ const ExperienceDetails = ({ experience, onSave, onDelete, onCancel }) => {
 
   return (
     <>
-      <div id="experience-info">
+      <div id="education-info">
         <form onSubmit={handleSubmit}>
           <InputWithLabel
-            identity="company-name"
-            labelText="Company Name"
+            identity="intitution-name"
+            labelText="Institution"
             type="text"
-            value={formData.company_name}
-            handleChange={(value) => handleChange("company_name", value)}
+            value={formData.institution}
+            handleChange={(value) => handleChange("intitution", value)}
           />
           <InputWithLabel
-            identity="position-name"
-            labelText="Position"
+            identity="degree-name"
+            labelText="Degree"
             type="text"
-            value={formData.position}
-            handleChange={(value) => handleChange("position", value)}
+            value={formData.degree}
+            handleChange={(value) => handleChange("degree", value)}
           />
           <div className="date">
             <InputWithLabel
               identity="start-date"
               labelText="Start Date"
-              type="textt"
+              type="text"
               value={formData.start_date}
               handleChange={(value) => handleChange("start_date", value)}
             />
@@ -57,15 +57,7 @@ const ExperienceDetails = ({ experience, onSave, onDelete, onCancel }) => {
             value={formData.location}
             handleChange={(value) => handleChange("location", value)}
           />
-          <div className="input">
-            <label htmlFor="description">Description</label>
-            <textarea
-              id="description"
-              value={formData.description}
-              onChange={(e) => handleChange("description", e.target.value)}
-            ></textarea>
-          </div>
-          <div id="experience-buttons">
+          <div id="education-buttons">
             <button type="button" onClick={onDelete}>
               Delete
             </button>
@@ -80,4 +72,4 @@ const ExperienceDetails = ({ experience, onSave, onDelete, onCancel }) => {
   );
 };
 
-export default ExperienceDetails;
+export default EducationDetails;

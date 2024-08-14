@@ -304,6 +304,30 @@ p {
   margin-left: 10px;
 }
 
+/* Education Section */
+/* Required:  */
+.education-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.edu-item {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.edu-item > p {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-weight: 600;
+  color: black;
+  margin-left: 10px;
+}
+
 /* Experience Details */
 #experience-info {
   display: flex;
@@ -314,7 +338,7 @@ p {
   background: #ffffff;
 }
 
-.experience-date {
+.date {
   display: flex;
   padding-right: 10px;
 }
@@ -339,6 +363,44 @@ textarea {
 }
 
 #experience-buttons > button {
+  width: 5vw;
+}
+
+/* Education Details */
+#education-info {
+  display: flex;
+  flex-direction: column;
+  width: clamp(300px, 50vw, 400px);
+  height: auto; /* Adjust height to fit content */
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.date {
+  display: flex;
+  padding-right: 10px;
+}
+
+textarea {
+  color: black; /* Ensure text color is black */
+  height: 30px;
+  width: 100%;
+  border: none;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 10px;
+
+  font-size: 0.85rem;
+}
+
+#education-buttons {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  gap: 5px;
+  padding: 10px;
+}
+
+#education-buttons > button {
   width: 5vw;
 }
 

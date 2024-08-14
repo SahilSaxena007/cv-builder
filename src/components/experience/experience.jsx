@@ -19,11 +19,6 @@ const Experience = ({ cvInformation, handleCvChange }) => {
 
   const handleModalChange = () => {
     changeModalOpen(!modalOpen);
-    // if (!modalOpen) {
-    //   changeSelectedItem("company-list");
-    //   setSelectedExperience(null);
-    //   setSelectedIndex(null);
-    // }
   };
 
   const toggleEye = (index) => {

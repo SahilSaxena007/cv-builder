@@ -21,6 +21,7 @@ function App() {
         location: "New York",
       },
     ],
+    skills: ["Coding", "Cooking", "Rapping", "Coding", "Cooking", "Rapping"],
     experience: [
       {
         company_name: "Umbrella Inc",
@@ -38,6 +39,15 @@ function App() {
         end_date: "",
         location: "Dubai",
         description: "One of the greatest companies to exist",
+      },
+      {
+        company_name: "Umbrella Inc",
+        position: "Designer",
+        start_date: "05/2024",
+        end_date: "09/2025",
+        location: "New York",
+        description:
+          "The First AI company in the world. They have revolutionaized the industry.",
       },
     ],
   });

@@ -5,7 +5,7 @@ import { PiCompassToolBold } from "react-icons/pi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { RiArrowDropUpLine } from "react-icons/ri";
 
-const Skills = () => {
+const Skills = ({ cvInformation, handleCvChange }) => {
   const [modalOpen, changeModalOpen] = useState(false);
   const handleModalChange = () => {
     changeModalOpen(!modalOpen);

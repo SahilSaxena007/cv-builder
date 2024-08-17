@@ -181,8 +181,19 @@ p {
 }
 
 #resume-education,
-#resume-experience {
+#resume-experience,
+#resume-skills {
   width: 95%;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 10px;
+}
+
+.skill-item {
+  font-size: 0.85rem;
 }
 
 .header {

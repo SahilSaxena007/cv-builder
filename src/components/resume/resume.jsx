@@ -54,6 +54,21 @@ const Resume = ({ cvInformation }) => {
             </div>
           )}
 
+          {information.skills && information.skills.length > 0 && (
+            <div id="resume-skills">
+              <div className="header">Skills</div>
+              <div id="skills-content">
+                <div className="skills-grid">
+                  {information.skills.map((skill, index) => (
+                    <div key={index} className="skill-item">
+                      • {skill}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           {information.experience && information.experience.length > 0 && (
             <div id="resume-experience">
               <div className="header">Experience</div>

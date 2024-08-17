@@ -4,26 +4,13 @@ import Break from "../line-break/break";
 import AddExperienceIconComponent from "../icons/add_icon_with_text";
 import { PiCompassToolBold } from "react-icons/pi";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
-import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import SkillDetails from "../details/skills_details";
 
 const Skills = ({ cvInformation, handleCvChange }) => {
   const [modalOpen, changeModalOpen] = useState(false);
-  const [eyeState, setEyeState] = useState(
-    cvInformation.skills.map(() => true) // Initialize eye state for skills
-  );
   const [selectedItem, changeSelectedItem] = useState("skills-list");
   const [selectedSkill, setSelectedSkill] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
-
-  const toggleEye = (index, event) => {
-    event.stopPropagation(); // Prevent the click event from bubbling up
-    setEyeState((prev) => {
-      const newEyeState = [...prev];
-      newEyeState[index] = !newEyeState[index]; // Toggle visibility
-      return newEyeState;
-    });
-  };
 
   const handleModalChange = () => {
     changeModalOpen(!modalOpen);
@@ -88,18 +75,7 @@ const Skills = ({ cvInformation, handleCvChange }) => {
                       className="skill-item-content"
                       onClick={() => handleSkillClick(skill, index)}
                     >
-                      <p>{eyeState[index] ? skill : "Hidden"}</p>
-                      {eyeState[index] ? (
-                        <IoIosEye
-                          size={24}
-                          onClick={(event) => toggleEye(index, event)}
-                        />
-                      ) : (
-                        <IoIosEyeOff
-                          size={24}
-                          onClick={(event) => toggleEye(index, event)}
-                        />
-                      )}
+                      <p>{skill}</p>
                     </div>
                     <hr />
                   </div>

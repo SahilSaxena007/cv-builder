@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Break from "../line-break/break";
 import Add_experience_icon_component from "../icons/add_icon_with_text";
-import { IoBriefcaseSharp } from "react-icons/io5";
+import { FaBook } from "react-icons/fa";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import EducationDetails from "../details/education_details";
@@ -74,7 +74,7 @@ const Education = ({ cvInformation, handleCvChange }) => {
     <>
       <div id="education-container" className="page-container">
         <div id="education-title" className="page-title">
-          <IoBriefcaseSharp size={24} />
+          <FaBook size={24} />
           <p>Education</p>
           {modalOpen ? (
             <RiArrowDropUpLine size={34} onClick={handleModalChange} />

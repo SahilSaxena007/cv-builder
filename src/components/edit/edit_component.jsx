@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-// EditComponent.jsx
 import PersonalDetails from "../details/personal_details";
 import Experience from "../experience/experience";
 import Education from "../education/eduction";
@@ -8,7 +6,12 @@ import { IoMdDownload } from "react-icons/io";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
-const EditComponent = ({ cvInformation, handleCvChange }) => {
+const EditComponent = ({
+  cvInformation,
+  handleCvChange,
+  loadExample,
+  clearResume,
+}) => {
   const downloadPDF = () => {
     const resumeElement = document.getElementById("resume");
     html2canvas(resumeElement, { scale: 2 }).then((canvas) => {
@@ -47,8 +50,13 @@ const EditComponent = ({ cvInformation, handleCvChange }) => {
         <div id="additional-features">
           <button id="download" onClick={downloadPDF}>
             <IoMdDownload color="white" size={20} />
-
             <p>Download PDF</p>
+          </button>
+          <button id="load-example" onClick={loadExample}>
+            <p>Load Example</p>
+          </button>
+          <button id="clear-resume" onClick={clearResume}>
+            <p>Clear Resume</p>
           </button>
         </div>
       </div>

@@ -351,6 +351,29 @@ p {
   margin-left: 10px;
 }
 
+/* Skill section */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.skill-item-content {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.skill-item-content > p {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-weight: 600;
+  color: black;
+  margin-left: 10px;
+}
+
 /* Education Section */
 /* Required:  */
 .education-item {
@@ -410,6 +433,26 @@ textarea {
 }
 
 #experience-buttons > button {
+  width: 5vw;
+}
+/* Skills Details */
+#skill-info {
+  display: flex;
+  flex-direction: column;
+  width: clamp(300px, 50vw, 400px);
+  height: auto; /* Adjust height to fit content */
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+#skill-buttons {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  gap: 5px;
+  padding: 10px;
+}
+
+#skill-buttons > button {
   width: 5vw;
 }
 

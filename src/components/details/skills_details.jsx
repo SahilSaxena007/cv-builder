@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-// SkillDetails.jsx
 import { useState } from "react";
 import InputWithLabel from "../inputs/input_with_label";
 
@@ -24,7 +23,7 @@ const SkillDetails = ({ skill, onSave, onDelete, onCancel }) => {
           labelText="Skill"
           type="text"
           value={data}
-          handleChange={(value) => handleChange(value)}
+          handleChange={handleChange} // Use handleChange function directly
         />
         <div id="skill-buttons">
           <button type="button" onClick={onDelete}>

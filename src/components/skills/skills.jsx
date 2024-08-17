@@ -42,13 +42,13 @@ const Skills = ({ cvInformation, handleCvChange }) => {
   };
 
   const handleAddSkill = () => {
-    const newSkill = "";
+    const newSkill = ""; // Initialize with an empty skill
     handleCvChange((prev) => ({
       ...prev,
       skills: [...prev.skills, newSkill],
     }));
     setSelectedSkill(newSkill);
-    setSelectedIndex(cvInformation.skills.length);
+    setSelectedIndex(cvInformation.skills.length); // This index will be out of bounds for the new skill
     changeSelectedItem("skill-details");
   };
 
@@ -89,7 +89,7 @@ const Skills = ({ cvInformation, handleCvChange }) => {
               />
             </>
           ) : (
-            selectedSkill && (
+            selectedSkill !== null && (
               <SkillDetails
                 skill={selectedSkill}
                 onSave={handleSkillChange}

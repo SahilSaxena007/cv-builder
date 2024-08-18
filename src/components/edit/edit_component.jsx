@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import PersonalDetails from "../details/personal_details";
 import Experience from "../experience/experience";
 import Education from "../education/eduction";
@@ -5,6 +6,8 @@ import Skills from "../skills/skills";
 import { IoMdDownload } from "react-icons/io";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import { RiFileTextFill } from "react-icons/ri";
+import { MdDelete } from "react-icons/md";
 
 const EditComponent = ({
   cvInformation,
@@ -52,10 +55,13 @@ const EditComponent = ({
             <IoMdDownload color="white" size={20} />
             <p>Download PDF</p>
           </button>
+
           <button id="load-example" onClick={loadExample}>
+            <RiFileTextFill color="white" size={20} />
             <p>Load Example</p>
           </button>
           <button id="clear-resume" onClick={clearResume}>
+            <MdDelete color="#b01616" size={20} />
             <p>Clear Resume</p>
           </button>
         </div>

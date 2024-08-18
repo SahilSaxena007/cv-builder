@@ -197,7 +197,7 @@ input {
   display: grid;
   grid-template-rows: 1fr 6fr;
   background: white;
-  width: 85%;
+  width: 70%;
   height: 800px;
   margin-left: 50px;
   margin-top: 20px;
@@ -584,17 +584,17 @@ textarea {
   }
 
   #resume {
-    max-width: 600px;
+    max-width: 700px;
   }
 }
 
-/* @media (max-width: 800px) {
+@media (max-width: 800px) {
   #resume {
     max-width: 500px;
   }
-} */
+}
 
-/* @media (max-width: 500px) {
+@media (max-width: 500px) {
   #editing-container,
   #resume-container {
     padding: 10px;
@@ -603,4 +603,4 @@ textarea {
   #resume {
     max-width: 100%;
   }
-} */
+}

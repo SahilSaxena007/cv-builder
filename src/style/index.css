@@ -22,6 +22,7 @@ body {
   padding: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 #top-level {
@@ -197,7 +198,7 @@ input {
   display: grid;
   grid-template-rows: 1fr 6fr;
   background: white;
-  width: 650px;
+  width: 600px;
   height: 800px;
   margin-left: 50px;
   margin-top: 20px;

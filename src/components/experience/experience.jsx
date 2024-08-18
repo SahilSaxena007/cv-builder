@@ -5,28 +5,16 @@ import Break from "../line-break/break";
 import Add_experience_icon_component from "../icons/add_icon_with_text";
 import { IoBriefcaseSharp } from "react-icons/io5";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
-import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import ExperienceDetails from "../details/experience_details";
 
 const Experience = ({ cvInformation, handleCvChange }) => {
   const [modalOpen, changeModalOpen] = useState(false);
   const [selectedItem, changeSelectedItem] = useState("company-list");
-  const [eyeState, setEyeState] = useState(
-    cvInformation.experience.map(() => true)
-  );
   const [selectedExperience, setSelectedExperience] = useState(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   const handleModalChange = () => {
     changeModalOpen(!modalOpen);
-  };
-
-  const toggleEye = (index) => {
-    setEyeState((prev) => {
-      const newEyeState = [...prev];
-      newEyeState[index] = !newEyeState[index];
-      return newEyeState;
-    });
   };
 
   const handleExperienceClick = (experience, index) => {
@@ -74,7 +62,11 @@ const Experience = ({ cvInformation, handleCvChange }) => {
   return (
     <>
       <div id="experience-container" className="page-container">
-        <div id="experience-title" className="page-title">
+        <div
+          id="experience-title"
+          className="page-title"
+          onClick={handleModalChange}
+        >
           <IoBriefcaseSharp size={24} />
           <p>Experience</p>
           {modalOpen ? (
@@ -96,17 +88,6 @@ const Experience = ({ cvInformation, handleCvChange }) => {
                         onClick={() => handleExperienceClick(experience, index)}
                       >
                         <p>{experience.company_name}</p>
-                        {eyeState[index] ? (
-                          <IoIosEye
-                            size={24}
-                            onClick={() => toggleEye(index)}
-                          />
-                        ) : (
-                          <IoIosEyeOff
-                            size={24}
-                            onClick={() => toggleEye(index)}
-                          />
-                        )}
                       </div>
                       <hr />
                     </div>

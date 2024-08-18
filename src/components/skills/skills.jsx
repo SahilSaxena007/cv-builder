@@ -54,7 +54,7 @@ const Skills = ({ cvInformation, handleCvChange }) => {
 
   return (
     <div id="skills-container" className="page-container">
-      <div id="skills-title" className="page-title">
+      <div id="skills-title" className="page-title" onClick={handleModalChange}>
         <PiCompassToolBold size={24} />
         <p>Skills</p>
         {modalOpen ? (

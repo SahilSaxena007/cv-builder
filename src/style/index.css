@@ -38,12 +38,13 @@ body {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 #colour-select {
   width: 80%;
   background-color: #ffffff;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
   height: 100px;
   border-radius: 10px;
   display: flex;
@@ -304,7 +305,7 @@ p {
 
 .experience-description {
   /* border: solid; */
-  width: 60%;
+  width: 80%;
   grid-column: 2/3;
 }
 

@@ -32,25 +32,33 @@ const Resume = ({ cvInformation, color }) => {
       <div id="resume">
         <div id="resume-header" style={resumeHeaderStyle}>
           {information.header?.name && (
-            <div id="name">{information.header.name}</div>
+            <div id="name" style={{ color: resumeHeaderStyle.color }}>
+              {information.header.name}
+            </div>
           )}
           <div id="personal-details">
             {information.header?.details?.email && (
               <div className="detail-item">
                 <MdEmail color={resumeHeaderStyle.color} />
-                <p>{information.header.details.email}</p>
+                <p style={{ color: resumeHeaderStyle.color }}>
+                  {information.header.details.email}
+                </p>
               </div>
             )}
             {information.header?.details?.phone && (
               <div className="detail-item">
                 <FaPhoneAlt color={resumeHeaderStyle.color} />
-                <p>{information.header.details.phone}</p>
+                <p style={{ color: resumeHeaderStyle.color }}>
+                  {information.header.details.phone}
+                </p>
               </div>
             )}
             {information.header?.details?.location && (
               <div className="detail-item">
                 <IoLocationSharp color={resumeHeaderStyle.color} />
-                <p>{information.header.details.location}</p>
+                <p style={{ color: resumeHeaderStyle.color }}>
+                  {information.header.details.location}
+                </p>
               </div>
             )}
           </div>
@@ -59,7 +67,13 @@ const Resume = ({ cvInformation, color }) => {
         <div id="resume-information">
           {information.education && information.education.length > 0 && (
             <div id="resume-education">
-              <div className="header" style={sectionHeaderStyle}>
+              <div
+                className="header"
+                style={{
+                  color: resumeHeaderStyle.backgroundColor,
+                  backgroundColor: sectionHeaderStyle.backgroundColor,
+                }}
+              >
                 Education
               </div>
               <div id="education-content">
@@ -79,7 +93,13 @@ const Resume = ({ cvInformation, color }) => {
 
           {information.skills && information.skills.length > 0 && (
             <div id="resume-skills">
-              <div className="header" style={sectionHeaderStyle}>
+              <div
+                className="header"
+                style={{
+                  color: resumeHeaderStyle.backgroundColor,
+                  backgroundColor: sectionHeaderStyle.backgroundColor,
+                }}
+              >
                 Skills
               </div>
               <div id="skills-content">
@@ -96,7 +116,13 @@ const Resume = ({ cvInformation, color }) => {
 
           {information.experience && information.experience.length > 0 && (
             <div id="resume-experience">
-              <div className="header" style={sectionHeaderStyle}>
+              <div
+                className="header"
+                style={{
+                  color: resumeHeaderStyle.backgroundColor,
+                  backgroundColor: sectionHeaderStyle.backgroundColor,
+                }}
+              >
                 Experience
               </div>
               <div id="experience-content">

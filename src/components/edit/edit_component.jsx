@@ -14,6 +14,8 @@ const EditComponent = ({
   handleCvChange,
   loadExample,
   clearResume,
+  handleColourChange,
+  color,
 }) => {
   const downloadPDF = () => {
     const resumeElement = document.getElementById("resume");
@@ -51,6 +53,19 @@ const EditComponent = ({
           />
         </div>
         <div id="additional-features">
+          <div id="colour-select">
+            <p>Select Colour</p>
+            <div id="colour-holder">
+              <label htmlFor="color">Color</label>
+              <input
+                id="color"
+                type="color"
+                value={color}
+                onChange={(e) => handleColourChange(e.target.value)}
+                aria-label="Select resume header color"
+              />
+            </div>
+          </div>
           <button id="download" onClick={downloadPDF}>
             <IoMdDownload color="white" size={20} />
             <p>Download PDF</p>

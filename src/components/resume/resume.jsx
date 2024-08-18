@@ -2,33 +2,54 @@ import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
 
+// Helper function to determine if color is dark
+const isColorDark = (color) => {
+  const rgb = parseInt(color.substring(1), 16); // Convert hex to RGB
+  const r = (rgb >> 16) & 0xff;
+  const g = (rgb >> 8) & 0xff;
+  const b = (rgb >> 0) & 0xff;
+  // Calculate luminance
+  const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  return luminance < 128;
+};
+
 // eslint-disable-next-line react/prop-types
-const Resume = ({ cvInformation }) => {
+const Resume = ({ cvInformation, color }) => {
   const information = cvInformation;
+  const darkColor = isColorDark(color);
+  const resumeHeaderStyle = {
+    backgroundColor: color,
+    color: darkColor ? "white" : "black",
+  };
+
+  const sectionHeaderStyle = {
+    backgroundColor: darkColor ? "#eef1f2" : "black",
+    color: darkColor ? "black" : "white",
+  };
 
   return (
     <>
       <div id="resume">
-        <div id="resume-header">
+        <div id="resume-header" style={resumeHeaderStyle}>
           {information.header?.name && (
             <div id="name">{information.header.name}</div>
           )}
           <div id="personal-details">
             {information.header?.details?.email && (
               <div className="detail-item">
-                <MdEmail color="white" />
+                <MdEmail color={resumeHeaderStyle.color} />
                 <p>{information.header.details.email}</p>
               </div>
             )}
             {information.header?.details?.phone && (
               <div className="detail-item">
-                <FaPhoneAlt color="white" />
+                <FaPhoneAlt color={resumeHeaderStyle.color} />
                 <p>{information.header.details.phone}</p>
               </div>
             )}
             {information.header?.details?.location && (
               <div className="detail-item">
-                <IoLocationSharp color="white" />
+                <IoLocationSharp color={resumeHeaderStyle.color} />
                 <p>{information.header.details.location}</p>
               </div>
             )}
@@ -38,7 +59,9 @@ const Resume = ({ cvInformation }) => {
         <div id="resume-information">
           {information.education && information.education.length > 0 && (
             <div id="resume-education">
-              <div className="header">Education</div>
+              <div className="header" style={sectionHeaderStyle}>
+                Education
+              </div>
               <div id="education-content">
                 {information.education.map((edu, index) => (
                   <div key={index} className="edu-content">
@@ -56,7 +79,9 @@ const Resume = ({ cvInformation }) => {
 
           {information.skills && information.skills.length > 0 && (
             <div id="resume-skills">
-              <div className="header">Skills</div>
+              <div className="header" style={sectionHeaderStyle}>
+                Skills
+              </div>
               <div id="skills-content">
                 <div className="skills-grid">
                   {information.skills.map((skill, index) => (
@@ -71,7 +96,9 @@ const Resume = ({ cvInformation }) => {
 
           {information.experience && information.experience.length > 0 && (
             <div id="resume-experience">
-              <div className="header">Experience</div>
+              <div className="header" style={sectionHeaderStyle}>
+                Experience
+              </div>
               <div id="experience-content">
                 {information.experience.map((exp, index) => (
                   <div key={index} className="content">

@@ -41,6 +41,33 @@ body {
   gap: 10px;
 }
 
+#colour-select {
+  width: 80%;
+  background-color: #ffffff;
+  height: 100px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding-top: 10px;
+  gap: 20px;
+}
+
+#colour-select > p {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #2b3d4d;
+}
+
+#colour-select > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 80%;
+}
+
 #editing-container {
   flex: 1;
   min-width: 300px;

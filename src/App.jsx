@@ -83,6 +83,8 @@ function App() {
     ],
   });
 
+  const [selectedColor, setSelectedColor] = useState("#2b3d4d");
+
   const loadExample = () => {
     changeCvInformation(exampleCvInformation);
   };
@@ -112,10 +114,12 @@ function App() {
             handleCvChange={changeCvInformation}
             loadExample={loadExample}
             clearResume={clearResume}
+            color={selectedColor}
+            handleColourChange={setSelectedColor}
           />
         </div>
         <div id="resume-container">
-          <Resume cvInformation={cvInformation} />
+          <Resume cvInformation={cvInformation} color={selectedColor} />
         </div>
       </div>
     </>
